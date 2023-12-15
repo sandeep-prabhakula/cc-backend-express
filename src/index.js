@@ -1,9 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const serverless = require('serverless-http');
 require('dotenv').config()
-const router = express.Router()
 const blogRouter = require('./apis/blogs')
 const authRouter = require('./apis/auth')
 const adminRouter = require('./apis/adminEndpoints')
@@ -26,6 +24,3 @@ app.get('/',(req,res)=>{
     console.log(process.env.SECRET_KEY)
     res.end('Server started successfully')
 })
-
-app.use('/.netlify/functions/api', router);
-module.exports.handler = serverless(app);
