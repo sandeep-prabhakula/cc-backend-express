@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js",
-    "build": "netlify deploy --prod"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +19,6 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "6.3",
-    "netlify-cli": "^17.10.1",
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {
