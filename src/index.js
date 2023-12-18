@@ -6,7 +6,7 @@ const blogRouter = require('./apis/blogs')
 const authRouter = require('./apis/auth')
 const adminRouter = require('./apis/adminEndpoints')
 const PORT = process.env.PORT || 8080
-
+const serverless = require('serverless-http')
 app.use(cors())
 app.use(express.json())
 
@@ -24,3 +24,6 @@ app.get('/',(req,res)=>{
     console.log(process.env.SECRET_KEY)
     res.end('Server started successfully')
 })
+
+const handler = serverless(app)
+module.exports = handler

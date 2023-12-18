@@ -6,8 +6,8 @@ const { BSON } = require('mongodb')
 // Get blogs (paginated)
 blogRouter.get('/get-all-blogs', async (req, res) => {
     try {
-        const pageNumber = req.query.pageNumber;
-        const pageSize = req.query.pageSize;
+        const pageNumber = req.query.pageNumber===null?req.query.pageNumber:1;
+        const pageSize = req.query.pageSize===null?req.query.pageSize:5;
         const skip = (pageNumber - 1) * pageSize;
         await blogRepository.connect()
         const db = blogRepository.db('blog')
